@@ -76,7 +76,7 @@ console.log(map2);
 //cache /visit tracking e why useful?
 //1.karon protiti user ba course k key hishebe rakhte pare..eki user multiple visit korle key reuse hoy..easily update kora jay..
 //2. map average timeLookup provide kore..O(1)..onek fast
-// JavaScript e map internally hash table er moto kaj kore..ami jokhon key diye value set kori map.set(key, value),map key k hash kore ekta unique address toiri kore
+// JavaScript e map internally hash table er moto kaj kore..ami jokhon key diye value set kori map.set(key, value),map key k hash kore ekta unique address toiri kore..
 
 // Map approach
  const map3 = new Map();
@@ -88,3 +88,34 @@ map.get(user1); // O(1)
  const arr = [{id:1}, {id:2}, {id:3}];
 arr.find(u => u.id === 5000); // O(n) karon protiti element check korte hobe
 
+//map.size (koyta elemnt bole dey)
+//map.delete...map.has ache naki nai..
+//map.forEach((value, key)=>console.log("Key: ",key, "Value",value));
+
+//console.log([...map.keys]);
+//map.keys ekta itetarator dey..
+const course7 = {name: "Programming Hero"};
+const course8 = {name: "level2"};
+const map4 = new Map();
+map3.set(course7, {courseId: "level1"});
+map3.set(course8, {courseId: "level1"});
+map3.forEach((value,key)=>(key.name = "Sohoj sorol simple" + key.name));
+console.log(map3);
+// Map(2) {
+//   { name: 'Sohoj sorol simpleProgramming Hero' } => { courseId: 'level1' },
+//   { name: 'Sohoj sorol simplelevel2' } => { courseId: 'level1' }
+// }
+
+const course9 = {name: "Programming Hero"};
+const course10 = {name: "level2"};
+const map5 = new Map();
+map4.set(course9, {courseId: "level1"});
+map4.set(course10, {courseId: "level1"});
+for(let key of map4.keys()){
+    key.name = "Shohoj shorol simple" + key.name;
+}
+console.log(map4);
+// Map(2) {
+//   { name: 'Shohoj shorol simpleProgramming Hero' } => { courseId: 'level1' },
+//   { name: 'Shohoj shorol simplelevel2' } => { courseId: 'level1' }
+// }
