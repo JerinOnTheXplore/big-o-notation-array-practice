@@ -32,3 +32,16 @@ const range = (start,stop,step)=>Array.from(
     (_,i)=> start + i * step
 );
 console.log(range(0,11,2));
+//range (start, stop, step)..ei function ti start theke shuru kore step kore songkha jog ore thake ..and stop er age porjonto mangulo firiye dey
+//range(0,11,2)=>[0,2,4,8,10]
+//ekhane stop excluded ar start included
+// array.form kivabe use kora hoyeche?
+// Array.from({length: N},(_,i)=> start + i*step)
+// Array.from prothom argument e ekti array-like-object ney..ekhane {lenght:N} diye notun array toiri hoy jar lenght holo N..
+//2nd argument e ekti mapping function ache (_,i)=>..ekhane _ holo current value (undefined ekhane), i holo index..ei mapping function prottek index er jonno notun value generate kore 
+// length kivabe nirdharon kora hoy??
+// Math.ceil((stop-start)/step)..eta holo kotogulo step doukar hobe ..eta sadharonoto fraction hote pare..jodi stop start theke thik proportion e na pore..
+//Math.ceil diye jottuk fraction ashe setar ekta round figure man newa hoy..
+
+//* Complexity: time and space 2 tai O(n) jekhane n= Math.ceil((stop-start)/step)..karon mapping function (_,i)=>start + i*step prottekta index er jonno execute hoy...
+// jehetu protek element e mapping function ekbar execute hoy ...mane n bar chalano hoy tai O(n)
