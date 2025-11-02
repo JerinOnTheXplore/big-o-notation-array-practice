@@ -40,3 +40,35 @@ console.log(subtotal);
 //  accumulator => ager dhaper jogfol ba jomaman
 //  currentValue=> bortoman looper item
 //  initialValue => accumulator er primary value
+
+ const players = [
+  { name: "Jamal Bhuyan", score: 88 },
+  { name: "Shekh Morsalin", score: 81 },
+  { name: "Rakib Hossain", score: 95 },
+  { name: "Topu Barman", score: 91 },
+  { name: "Sohel Rana", score: 72 },
+];
+
+const bestScorer = players.reduce((bestPlayer, player)=>{
+    console.log(bestPlayer,player);
+    if (bestPlayer.score > player.score){
+        return bestPlayer;
+    }
+    return player;
+},players[0]);
+console.log(bestScorer);
+
+/* ekhane reduce() ki korche?*/
+
+/**
+ * reduce ekhane use kora hoise array theke sobcheye beshi score er player ber korar jonno..
+ * bestPlayer: step by step sobcheye valo score er player k dhore rakhe accumulator
+ * player: current iteration er player object
+ * initialValue: players[0] first player = {name: "Jamal Bhuiyan", score: 88}
+ * step 1: first iteration
+ * bestPlayer = {name: "Jamal Bhuyan", score: 88}
+ * player = { name: "Shekh Morsalin", score: 81 }
+ * if (bestPlayer.score > player.score) // 88 > 81 → true
+ return bestPlayer // Jamal Bhuyan keeps
+
+ */
