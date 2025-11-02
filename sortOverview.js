@@ -35,8 +35,3 @@ const fruits2 = ["Banana","apple","Cherry","date"];
 fruits2.sort((a,b)=>a.localeCompare(b));
 console.log(fruits2);//[ 'apple', 'Banana', 'Cherry', 'date' ]
 
-const tagsFromPosts = [
-  ["javascript", "react", "css"],
-  ["node", "express"],
-  ["css", "html", "react"], 
-];
