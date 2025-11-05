@@ -36,6 +36,7 @@ class Stack {
         return this.items.length === 0;
     }
 //O(n)
+// slice().reverse().join() egula O(n) 
     print(){
         console.log(this.items.slice().reverse().join(" "));
     }
