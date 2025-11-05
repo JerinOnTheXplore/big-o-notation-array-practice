@@ -16,6 +16,8 @@ class Queue {
     }
 
 // O(n)
+//shift() array er first element k soriye dey...kintu tar por baki sob element k ek ek kore re indexed kore..tai shift linear time ney..
+// shift er O(n) problem erate Linked list use korte pari..
     dequeue() {
         if (this.isEmpty()){
             return undefined;
