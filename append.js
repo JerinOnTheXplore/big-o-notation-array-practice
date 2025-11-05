@@ -25,29 +25,68 @@ class LinkedList {
     this.length++;
     return this;
 }
-  prepend(){
-
+  prepend(value){
+     const newNode = new Node(value);
+     //if the linked list is empty
+     if (this.head === null) {
+        this.head = newNode;
+        this.tail = newNode;
+     }  else {
+        // if the linked list is empty
+        if (this.head === null){
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            //if the linked list is not empty
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+       this.length++ ;
+       return this;
+     }
   }
 
-  insert() {
+  insert(index, value) {
+     if (index < 0 || index > this.length){
+        console.error("muri khaaa");
+        return undefined;
+     }
+     // if the insert is in the start of the linked list 
+     if(index === 0){
+        return this.append(value);
+     }
+     // if the insert is in the middle
 
+    // find the leading node
+
+    let count = 0;
+    let leadingNode = this.head;
+
+    while (count !== index) {
+      leadingNode = leadingNode.next;
+      count++;
+    }
+
+    console.log(leadingNode);
   }
-
-  remove() {
-
-  }
+  remove() {}
 
   print() {
-    const arr = [] ;
+    const arr = [];
     let currentNode = this.head;
 
-    while (currentNode !== null){
-        arr.push(currentNode.value);
-        currentNode = currentNode.next;
+    while (currentNode !== null) {
+      arr.push(currentNode.value);
+      currentNode = currentNode.next;
     }
-    console.log(arr.join("=>"), "=>null");
+
+    console.log(arr.join(" -> "), "-> null ");
   }
-}
+  }
+  
+  
+  
+
 
 
  
