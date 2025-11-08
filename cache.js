@@ -28,5 +28,21 @@ const getData = (id) =>{
    return data;
 };
 console.log(dataCache);
+console.log(getData(123));//first bar getData(123) call korle getData er modhdhe dataCache.has(123) check kore ekhno cache khali tai false..
+// tai console.log("Cache Miss for id:", 123); print hobe (Cache Miss)
+// erpor expensiveTask(123) chalano hoy..ekhane ami simulate kortesi j kichu extensive kaj hochche..(DB/APi)
+// dataCache.set(123, data) diye Map-e sei result store kora hoy.. ekhon cache e entry ache
 console.log(getData(123));
-console.log(getData(123));
+// 2nd bar getData(123) call korle ebar dataCache.has(123) true hobe...karon ager step e set kore disi..
+// console.log("Cache HIT for id:", 123); print hobe..
+// dataCache.get(123) sorasori cached object return korbe..kono extensive kaj chala te hobena..tai druto pawa jabe..
+
+/**
+ * first bar kom cost e extensive data newa hoy..cache e joma rakaha hoy..porerbar same id hole extensive task chalanor bodole cache thke O(1) lookup kore data ferot dewa hoy..evabe delay r resource use kome..
+ * // eta memorization / caching er basic pattern
+ */
+
+/**
+ * Complexity: dataCache.has() o dataCache.get() er average time complexity = O(1) map hash like lookup....
+ *  first bar cache banate extensiveTask khoroch sapekhkho.. but lookup O(1);
+ */
