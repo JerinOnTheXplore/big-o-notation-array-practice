@@ -52,3 +52,5 @@ stack.push(30);
 stack.print();
 console.log(stack.peek());
 console.log(stack.pop());
+
+export default Stack;
